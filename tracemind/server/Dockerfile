@@ -1,5 +1,7 @@
 # Use an official Python runtime as a parent image
-FROM python:3.11-slim
+# 如果原生镜像无法拉取，可以使用国内镜像加速（例如 daocloud, 1panel 等）
+# FROM python:3.11-slim
+FROM docker.m.daocloud.io/library/python:3.11-slim
 
 # Set environment variables
 # PYTHONUNBUFFERED=1 确保日志实时输出，方便 NAS 查看日志调试
