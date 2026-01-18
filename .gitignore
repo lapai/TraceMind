@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+
+# Databases
+*.db
+*.sqlite3
+tracemind/server/data/
+tracemind/data/
+
+# Environment variables
+.env
+
+# Docker
+tracemind.tar
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+build_docker.bat
+start_windows.bat
+upload_to_github.bat
