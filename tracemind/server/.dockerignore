@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.env
+*.db
+data/
+static/index.html.bak

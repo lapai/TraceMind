@@ -1,10 +1,23 @@
+version: '3.8'
+
 services:
   tracemind-server:
-    build: ./server
+    container_name: tracemind-server
+    build: 
+      context: ./server
+      dockerfile: Dockerfile
+    image: tracemind:latest
     ports:
       - "8000:8000"
     volumes:
       - ./data:/app/data
     environment:
       - DATABASE_URL=sqlite:///./data/tracemind.db
+      - TZ=Asia/Shanghai
     restart: always
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/').getcode()"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
